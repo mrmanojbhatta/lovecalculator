@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love Calculator</title>
+    <!-- Include Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Link to external CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Main Header Section -->
+    <header>
+        <div class="container">
+            <div class="card mx-auto my-5 shadow-lg p-4 rounded animate__animated animate__fadeIn">
+                <div class="card-header text-center">
+                    <h1>Love Calculator</h1>
+                </div>
+                <div class="card-body">
+                    <!-- Form for entering names -->
+                    <form class="form-inline justify-content-center" id="loveForm">
+                        <div class="form-group mx-2">
+                            <input type="text" class="form-control" placeholder="Your Name" id="name">
+                        </div>
+                        <span class="mx-2">+</span>
+                        <div class="form-group mx-2">
+                            <input type="text" class="form-control" placeholder="Love Name" id="lname">
+                        </div>
+                    </form>
+                    <br>
+                    <!-- Button to trigger love percentage calculation -->
+                    <div class="text-center">
+                        <button class="btn btn-success btn-lg" onclick="checkloveper()">Calculate</button>
+                    </div>
+                    <br>
+                    <!-- Input to display love percentage result -->
+                    <div class="text-center">
+                        <input type="text" placeholder="LOVE PERCENTAGE" class="form-control w-50 mx-auto" id="lovevalue" readonly>
+                    </div>
+                </div>
+                <div class="card-footer text-center text-muted">
+                    May your love be as infinite as the stars.
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- JavaScript files -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
