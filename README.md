@@ -5,11 +5,9 @@ Welcome to the Love Calculator project! This web application calculates a fun "l
 ## Table of Contents
 
 - [Features](#features)
-- [Demo](#demo)
 - [Installation](#installation)
 - [Usage](#usage)
 - [Contributing](#contributing)
-- [License](#license)
 
 ## Features
 
@@ -17,10 +15,6 @@ Welcome to the Love Calculator project! This web application calculates a fun "l
 - **Validation**: Ensures that names are valid (i.e., contain only letters and spaces, and are at least 3 characters long).
 - **Stylish Design**: Modern look with a linear gradient background, responsive card design, and smooth animations.
 - **Bootstrap Integration**: Uses Bootstrap for responsive design and easy styling.
-
-## Demo
-
-You can view a live demo of the Love Calculator [here](https://your-live-demo-link.com). *(Replace with your actual demo link)*
 
 ## Installation
 
@@ -69,10 +63,6 @@ We welcome contributions to the Love Calculator project! If you have suggestions
     git push origin feature/your-feature-name
     ```
 6. **Create a Pull Request**: Go to the original repository and create a pull request with your changes.
-
-## License
-
-This project is licensed under the [MIT License](LICENSE). See the [LICENSE](LICENSE) file for details.
 
 ---
 
