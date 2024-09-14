@@ -7,7 +7,7 @@ Welcome to the Love Calculator project! This web application calculates a fun "l
 - [Features](#features)
 - [Installation](#installation)
 - [Usage](#usage)
-- [Demo](#Demo)
+- [Demo](#demo)
 - [Contributing](#contributing)
 
 ## Features
@@ -44,7 +44,7 @@ To run this project locally, follow these steps:
 3. Click the "Calculate" button to see the love percentage.
 4. The result will be displayed in the input field below the button.
 
-#Demo
+## Demo
 
 ![Love Calculator Demo](https://github.com/mrmanojbhatta/lovecalculator/blob/main/love.png)
 
