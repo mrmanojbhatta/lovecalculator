@@ -7,6 +7,7 @@ Welcome to the Love Calculator project! This web application calculates a fun "l
 - [Features](#features)
 - [Installation](#installation)
 - [Usage](#usage)
+- [Demo](#Demo)
 - [Contributing](#contributing)
 
 ## Features
@@ -42,6 +43,10 @@ To run this project locally, follow these steps:
 2. Enter your name and the name of your love interest in the input fields.
 3. Click the "Calculate" button to see the love percentage.
 4. The result will be displayed in the input field below the button.
+
+#Demo
+
+![Love Calculator Demo](https://github.com/mrmanojbhatta/lovecalculator/blob/main/love.png)
 
 ## Contributing
 
