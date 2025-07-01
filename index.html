@@ -3,53 +3,255 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Love Calculator</title>
-    <!-- Include Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <!-- Link to external CSS -->
-    <link rel="stylesheet" href="styles.css">
+    <title>Full Name Love Calculator ❤️</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-pink: #ff4d6d;
+            --secondary-pink: #ff8fa3;
+            --light-pink: #fff0f3;
+            --dark-red: #590d22;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, var(--light-pink), #ffe5ec);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            color: var(--dark-red);
+        }
+        
+        .love-card {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(89, 13, 34, 0.2);
+            overflow: hidden;
+            width: 100%;
+            max-width: 600px;
+            transition: transform 0.3s;
+            border: none;
+        }
+        
+        .card-header {
+            background: linear-gradient(to right, var(--primary-pink), var(--secondary-pink));
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.2rem;
+            border-bottom: none;
+        }
+        
+        .form-control {
+            border: 2px solid #f8bbd0;
+            padding: 12px 15px;
+            border-radius: 10px !important;
+            transition: all 0.3s;
+        }
+        
+        .btn-love {
+            background: linear-gradient(to right, var(--primary-pink), var(--secondary-pink));
+            border: none;
+            padding: 12px 30px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: 50px;
+            color: white;
+            width: 100%;
+            margin: 25px auto;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(255, 77, 109, 0.3);
+        }
+        
+        .love-progress {
+            height: 30px;
+            background: linear-gradient(to right, #ff758c, #ff7eb3);
+            width: 0;
+            transition: width 1s ease-in-out;
+            border-radius: 15px;
+        }
+        
+        .percentage {
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: var(--primary-pink);
+        }
+        
+        .emoji {
+            font-size: 2.5rem;
+            animation: pulse 1.5s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+        
+        @media (max-width: 576px) {
+            .card-header {
+                font-size: 1.8rem;
+            }
+            .percentage {
+                font-size: 2.8rem;
+            }
+        }
+    </style>
 </head>
 <body>
-    <!-- Main Header Section -->
-    <header>
-        <div class="container">
-            <div class="card mx-auto my-5 shadow-lg p-4 rounded animate__animated animate__fadeIn">
-                <div class="card-header text-center">
-                    <h1>Love Calculator</h1>
-                </div>
-                <div class="card-body">
-                    <!-- Form for entering names -->
-                    <form class="form-inline justify-content-center" id="loveForm">
-                        <div class="form-group mx-2">
-                            <input type="text" class="form-control" placeholder="Your Name" id="name">
+    <div class="container">
+        <div class="love-card">
+            <div class="card-header">
+                ❤️ Full Name Love Calculator ❤️
+            </div>
+            <div class="card-body p-4">
+                <form id="loveForm">
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <label class="form-label">Your First Name</label>
+                            <input type="text" class="form-control" id="firstName1" required>
                         </div>
-                        <span class="mx-2">+</span>
-                        <div class="form-group mx-2">
-                            <input type="text" class="form-control" placeholder="Love Name" id="lname">
+                        <div class="col-md-6">
+                            <label class="form-label">Your Last Name</label>
+                            <input type="text" class="form-control" id="lastName1" required>
                         </div>
-                    </form>
-                    <br>
-                    <!-- Button to trigger love percentage calculation -->
-                    <div class="text-center">
-                        <button class="btn btn-success btn-lg" onclick="checkloveper()">Calculate</button>
                     </div>
-                    <br>
-                    <!-- Input to display love percentage result -->
-                    <div class="text-center">
-                        <input type="text" placeholder="LOVE PERCENTAGE" class="form-control w-50 mx-auto" id="lovevalue" readonly>
+                    
+                    <div class="row mb-4">
+                        <div class="col-md-6">
+                            <label class="form-label">Partner's First Name</label>
+                            <input type="text" class="form-control" id="firstName2" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label">Partner's Last Name</label>
+                            <input type="text" class="form-control" id="lastName2" required>
+                        </div>
                     </div>
+                    
+                    <button type="submit" class="btn btn-love">
+                        <i class="fas fa-heart me-2"></i> Calculate Love Percentage
+                    </button>
+                </form>
+                
+                <div class="text-center mt-4" id="resultContainer" style="display: none;">
+                    <div class="emoji mb-2" id="resultEmoji"></div>
+                    <div class="percentage mb-3" id="percentage">0%</div>
+                    <div class="love-meter mb-3">
+                        <div class="love-progress" id="loveProgress"></div>
+                    </div>
+                    <div class="message fs-5" id="resultMessage"></div>
                 </div>
-                <div class="card-footer text-center text-muted">
-                    May your love be as infinite as the stars.
+                
+                <div class="text-center mt-4 text-muted">
+                    <small>Same names will always produce the same result</small>
                 </div>
             </div>
         </div>
-    </header>
+    </div>
 
-    <!-- JavaScript files -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        document.getElementById('loveForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get full names
+            const name1 = document.getElementById('firstName1').value.trim() + ' ' + 
+                          document.getElementById('lastName1').value.trim();
+            const name2 = document.getElementById('firstName2').value.trim() + ' ' + 
+                          document.getElementById('lastName2').value.trim();
+            
+            // Validate
+            if (!name1.trim() || !name2.trim()) {
+                alert('Please enter both names');
+                return;
+            }
+            
+            // Calculate
+            const percentage = calculateLovePercentage(name1, name2);
+            displayResult(percentage);
+        });
+        
+        function calculateLovePercentage(fullName1, fullName2) {
+            // Letter values (A=1, B=2, ..., Z=26)
+            const letterValues = {};
+            for (let i = 0; i < 26; i++) {
+                letterValues[String.fromCharCode(65 + i)] = i + 1;
+            }
+            
+            // Combine all names (first + last)
+            const combinedName = (fullName1 + fullName2).toUpperCase().replace(/\s+/g, '');
+            
+            // Calculate name sum
+            let sum = 0;
+            for (const char of combinedName) {
+                sum += letterValues[char] || 0;
+            }
+            
+            // Calculate percentage (0-100)
+            const percentage = Math.floor((sum % 101));
+            
+            // Bonus for matching initials
+            const firstName1 = fullName1.split(' ')[0];
+            const firstName2 = fullName2.split(' ')[0];
+            if (firstName1[0] === firstName2[0]) {
+                return Math.min(100, percentage + 15);
+            }
+            
+            // Bonus for same last name
+            const lastName1 = fullName1.split(' ')[1] || '';
+            const lastName2 = fullName2.split(' ')[1] || '';
+            if (lastName1 && lastName2 && lastName1[0] === lastName2[0]) {
+                return Math.min(100, percentage + 10);
+            }
+            
+            return percentage;
+        }
+        
+        function displayResult(percent) {
+            const emoji = document.getElementById('resultEmoji');
+            const percentageEl = document.getElementById('percentage');
+            const message = document.getElementById('resultMessage');
+            const progress = document.getElementById('loveProgress');
+            
+            // Set emoji and message
+            if (percent >= 90) {
+                emoji.textContent = '❤️🔥';
+                message.textContent = 'Divine match! Soulmates!';
+            } else if (percent >= 75) {
+                emoji.textContent = '🥰';
+                message.textContent = 'Excellent compatibility!';
+            } else if (percent >= 60) {
+                emoji.textContent = '💖';
+                message.textContent = 'Strong potential for love!';
+            } else if (percent >= 40) {
+                emoji.textContent = '💕';
+                message.textContent = 'Good connection possible';
+            } else if (percent >= 20) {
+                emoji.textContent = '🤔';
+                message.textContent = 'Needs more chemistry';
+            } else {
+                emoji.textContent = '💔';
+                message.textContent = 'Low compatibility';
+            }
+            
+            // Animate percentage display
+            percentageEl.textContent = '0%';
+            progress.style.width = '0';
+            
+            setTimeout(() => {
+                percentageEl.textContent = percent + '%';
+                progress.style.width = percent + '%';
+            }, 100);
+            
+            // Show results
+            document.getElementById('resultContainer').style.display = 'block';
+        }
+    </script>
 </body>
 </html>
