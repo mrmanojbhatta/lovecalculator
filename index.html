@@ -342,15 +342,6 @@
         });
         
         function calculateLovePercentage(fullName1, fullName2) {
-            // Special case (in any order)
-            const name1Lower = fullName1.toLowerCase().trim();
-            const name2Lower = fullName2.toLowerCase().trim();
-            
-            // Check if the names match the special couple (in any order)
-            if ((name1Lower === "manoj bhatta" && name2Lower === "ishwori regmi") ||
-                (name1Lower === "ishwori regmi" && name2Lower === "manoj bhatta")) {
-                return 100;
-            }
                 
             // Letter values (A=1, B=2, ..., Z=26)
             const letterValues = {};
